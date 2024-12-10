@@ -1,0 +1,93 @@
+/* Reset global para asegurarnos de que no haya márgenes ni rellenos indeseados */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Estilos para el body */
+body {
+    min-height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+    background-color: #44a56e; /* Fondo claro y neutro */
+    display: grid; /* Usamos grid para centrar la calculadora */
+    place-items: center; /* Centra la calculadora en el eje vertical y horizontal */
+}
+
+/* Estilos para el contenedor de la calculadora */
+.calculadora {
+    background-color: #25a26e; /* Fondo blanco para un estilo limpio */
+    color: #333333; /* Texto gris oscuro para suavizar el contraste */
+    width: 350px; /* Ancho fijo para la calculadora */
+    max-width: 100%; /* Para que sea responsive y no exceda el ancho */
+    padding: 1.5rem; /* Espaciado interno */
+    border-radius: 1rem; /* Bordes redondeados */
+    display: grid; /* Usamos grid para distribuir los botones */
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas para los botones */
+    gap: .5rem; /* Espacio entre los botones */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para darle profundidad */
+}
+
+/* Estilos para la pantalla de la calculadora */
+.pantalla {
+    grid-column: 1 / 5; /* La pantalla abarca las 4 columnas */
+    background-color: #f4f4f4; /* Fondo gris muy claro */
+    padding: 1.5rem; /* Espaciado interno */
+    font-size: 2rem; /* Tamaño de texto grande para la pantalla */
+    text-align: right; /* Alineación a la derecha */
+    border-radius: .5rem; /* Bordes redondeados */
+    margin-bottom: 1rem; /* Espacio debajo de la pantalla */
+    font-family: monospace; /* Fuente monoespaciada para el estilo de calculadora */
+    font-weight: bold; /* Fuente en negrita */
+}
+
+/* Estilos generales para los botones */
+.btn {
+    background-color: #e0e0e0; /* Fondo gris claro para los botones */
+    color: #333333; /* Texto gris oscuro */
+    border: 1px solid #ddd; /* Borde sutil gris claro */
+    padding: 1.5rem .5rem; /* Relleno con un poco más de altura */
+    display: flex; /* Para centrar los iconos dentro del botón */
+    justify-content: center; /* Alineación horizontal */
+    align-items: center; /* Alineación vertical */
+    border-radius: .5rem; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor para indicar que es interactivo */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transición para el cambio de color y tamaño */
+}
+
+/* Efecto hover para los botones */
+.btn:hover {
+    background-color: #02f062; /* Fondo gris más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón */
+}
+
+/* Estilo para el botón de 0, que ocupa dos columnas */
+#cero {
+    grid-column: span 2; /* Hace que el botón ocupe el espacio de dos columnas */
+}
+
+/* Estilos para el botón de igual */
+#igual {
+    grid-row: span 2; /* Hace que el botón ocupe el espacio de dos filas */
+    background-color: #bdbdbd; /* Fondo gris intermedio para el botón igual */
+}
+
+/* Efecto hover para el botón de igual */
+#igual:hover {
+    background-color: #9e9e9e; /* Fondo gris más oscuro en hover */
+}
+
+/* Estilos especiales para botones de operación */
+#c {
+    background-color: #ffb74d; /* Naranja suave para el botón de borrar */
+}
+
+#borrar {
+    background-color: #ff9800; /* Naranja más fuerte para el botón de retroceder */
+}
+
+/* Efecto hover para los botones de operación */
+#c:hover, #borrar:hover {
+    background-color: #fb8c00; /* Naranja más intenso al pasar el mouse */
+}
+
